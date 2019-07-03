@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { SpringScroll } from '../SpringScroll/SpringScroll';
 import Scrollbars from 'react-custom-scrollbars';
-import * as _ from 'lodash';
 import { iCmsItem, iCemesterProps, Dictionary } from '../../models';
 import { Section } from '../Section/Section';
 
