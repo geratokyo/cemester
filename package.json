@@ -1,0 +1,41 @@
+{
+  "name": "cemester",
+  "version": "0.0.1",
+  "description": "A content management library that converts a json objects into DOM elements",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -R ./dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geratokyo/cemester.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "paginator",
+    "react-component",
+    "react-studio"
+  ],
+  "author": "Gera Kourtidis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geratokyo/cemester/issues"
+  },
+  "homepage": "https://github.com/geratokyo/cemester#readme",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react": "^16.8.6",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-studio-tabs": "0.0.8",
+    "rebound": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.135",
+    "@types/react": "^16.8.22",
+    "@types/react-custom-scrollbars": "^4.0.5",
+    "@types/react-dom": "^16.8.4"
+  }
+}
