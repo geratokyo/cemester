@@ -16,7 +16,8 @@
     "exclude": [
         "node_modules",
         "vendor",
-        "resources"
+        "resources", 
+        "examples"
     ],
     "include": [
         "./src/**/*.tsx",

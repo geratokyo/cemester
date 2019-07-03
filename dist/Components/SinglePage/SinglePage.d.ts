@@ -24,7 +24,7 @@ export declare class SinglePage extends React.Component<SinglePageProps, SingleP
         top: number;
     };
     handleScroll: (e: any) => void;
-    checkTopNavBar: (offset: number) => void;
+    checkTopNavBar: () => void;
     render(): JSX.Element;
 }
 export declare const GET_URL: (url: string | (() => string)) => string;

@@ -14,16 +14,16 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var _ = require("lodash");
 var Section_1 = require("../Section/Section");
 var SinglePage_1 = require("../SinglePage/SinglePage");
+var lodash_keyby_1 = require("lodash.keyby");
 var SingleSectionPage = (function (_super) {
     __extends(SingleSectionPage, _super);
     function SingleSectionPage(p) {
         var _this = _super.call(this, p) || this;
         var url = SinglePage_1.GET_URL(p.url);
         _this.state = {
-            content: _.keyBy(p.content, "key"),
+            content: lodash_keyby_1.keyBy(p.content, "key"),
             url: url || p.content[0].key
         };
         return _this;

@@ -46,12 +46,12 @@ var SinglePage = (function (_super) {
             };
         };
         _this.handleScroll = function (e) {
-            _this.checkTopNavBar(e);
+            _this.checkTopNavBar();
             _this.setState({
                 offset: e.scrollTop
             });
         };
-        _this.checkTopNavBar = function (offset) {
+        _this.checkTopNavBar = function () {
             var topElOffset = Math.abs(_this.topEl.getBoundingClientRect().top);
             _this.setState({
                 isNavFixed: topElOffset > (_this.windowHeight * 0.5)
@@ -78,7 +78,12 @@ var SinglePage = (function (_super) {
         var _a = this, props = _a.props, state = _a.state, cls = this.props.className || "";
         return (React.createElement("div", { className: "sp " + cls, ref: function (e) { return _this.el = e; } },
             (state.isNavFixed && props.header) &&
-                React.createElement("div", { className: "sp__nav sp__nav--static", style: { position: "absolute", width: "100%", height: "auto", zIndex: 9999 } }, React.Children.map(this.props.header, function (child) {
+                React.createElement("div", { className: "sp__nav sp__nav--static", style: {
+                        position: "absolute",
+                        width: "100%",
+                        height: "auto",
+                        zIndex: 9999
+                    } }, React.Children.map(this.props.header, function (child) {
                     return React.cloneElement(child, __assign({}, child.props, { scrollTo: _this.scrollToSection }));
                 })[0]),
             React.createElement(SpringScroll_1.SpringScroll, { ref: function (e) { return _this.scrollEl = e; }, className: "sp__spring-scroll", style: {

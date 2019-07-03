@@ -2,8 +2,8 @@
 
 Cemester is a library that let's you create website content and manage it by converting a JSON file into components. 
 
-- Installation 
-- Interfaces
+- [Installation](#installation) 
+- [Interfaces](#interfaces)
 - How to use Cemester
     - Cemester Syntax
     - SinglePage and SingleSectionPage
@@ -13,7 +13,7 @@ Cemester is a library that let's you create website content and manage it by con
 ## Installation
 To install Cemester to your project run: 
 ```
-npm run install cemester
+npm i cemester --save
 ```
 
 ## Interfaces
