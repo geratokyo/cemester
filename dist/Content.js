@@ -17,6 +17,10 @@ var CustomComponentService_1 = require("./CustomComponentService");
 exports.Content = function (props) {
     var item = props.item;
     var C = Components[item.type] || CustomComponentService_1.default.getCustomComponent(item);
-    return C ? React.createElement(C, __assign({}, props)) : React.createElement("pre", null, JSON.stringify(item));
+    if (!C) {
+        console.error("Component with name \"" + item.type + "\" was not found \n Check your type names");
+        return null;
+    }
+    return React.createElement(C, __assign({}, props));
 };
 //# sourceMappingURL=Content.js.map
