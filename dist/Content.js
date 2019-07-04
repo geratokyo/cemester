@@ -13,9 +13,10 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var Components = require("./Components");
+var CustomComponentService_1 = require("./CustomComponentService");
 exports.Content = function (props) {
     var item = props.item;
-    var C = Components[item.type];
-    return React.createElement(C, __assign({}, props));
+    var C = Components[item.type] || CustomComponentService_1.default.getCustomComponent(item);
+    return C ? React.createElement(C, __assign({}, props)) : React.createElement("pre", null, JSON.stringify(item));
 };
 //# sourceMappingURL=Content.js.map
