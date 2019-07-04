@@ -23,7 +23,7 @@ npm i cemester --save
 |className|```?string```|Classname of the parent element|
 |header|```?React.ReactNode```|This is the component that will appear at the top before the content Also used for a SinglePage type to control the fixed elements|
 |content|```iCmsItem[]```|This is a tree structure of the content of the page|
-|url|```string``` \| ```(()=>string)```|This represents the current url|
+|url|```string``` , ```(()=>string)```|This represents the current url|
 |customComponents|```(item:iCmsItem)=>React.ReactNode```|A callback function that should be passed to determine the custom components of the campaign|
 |screenThreshold|```?number```|This is the percentage after which a section is going to be considered in view|
 
@@ -36,7 +36,7 @@ The interface that the JSON with the tree structure should follow
 |key|```string```|distict element identifier|
 |type|```string```|type of the component that should be rendered for the node|
 |parent|```?string```| distict element identifier of the parent element|
-|content|```?any``` \| ```iImage``` \| ```iCustomContent```|the content of the current node to be rendered in a component|
+|content|```?any``` , ```iImage``` , ```iCustomContent```|the content of the current node to be rendered in a component|
 |className|```?string```|the className that should be given to the current node's HTML tag|
 |animation|```?string```|the className for the animations to be added on a current HTML tag| 
 |children|```?iCmsItem[]```|Child elements of the current node|
@@ -70,3 +70,44 @@ The interface that the JSON with the tree structure should follow
 |Name|Type|Description|
 |-----|------|---|
 |isInView|```?boolean``` |True if the element is in the viewport of the browser|
+
+
+### iPageProps
+```
+
+export interface iPageProps{
+    /**
+     * Classname of the parent element
+     */
+    className?:string; 
+
+    /**
+     * This is the component that will appear at the top before the content
+     * Also used for a SinglePage type to control the fixed elements
+     */
+    header?: React.ReactNode; 
+
+    /**
+     * This is a tree structure of the content of the page
+     */
+    content: iCmsItem[];
+
+    /**
+     * This represents the current url
+     */
+    url: string | (()=>string); 
+
+    /**
+     * A callback function that should be passed to determine 
+     * the custom components of the campaign
+     */
+    customComponents:(item:iCmsItem)=>React.ReactNode; 
+
+    /**
+     * This is the percentage after which a section is 
+     * going to be considered in view
+     */
+    screenThreshold?:number; 
+
+}
+```
