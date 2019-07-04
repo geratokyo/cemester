@@ -94,7 +94,7 @@ export const DEFAULTS = {
 }
 
 
-export interface iCemesterProps{
+export interface iPageProps{
     /**
      * Classname of the parent element
      */

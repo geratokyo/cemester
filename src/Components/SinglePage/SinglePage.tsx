@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { SpringScroll } from '../SpringScroll/SpringScroll';
 import Scrollbars from 'react-custom-scrollbars';
-import { iCmsItem, iCemesterProps, Dictionary } from '../../models';
+import { iCmsItem, iPageProps, Dictionary } from '../../models';
 import { Section } from '../Section/Section';
 
 
-export interface SinglePageProps extends iCemesterProps {
+export interface SinglePageProps extends iPageProps {
     className?: string;
 }
 

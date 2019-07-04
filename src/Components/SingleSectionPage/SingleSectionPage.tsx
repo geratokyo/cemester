@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { iCmsItem, Dictionary, iCemesterProps } from '../../models';
+import { iCmsItem, Dictionary, iPageProps } from '../../models';
 import { Section } from '../Section/Section';
 import { GET_URL } from '../SinglePage/SinglePage';
-import {keyBy} from 'lodash.keyby';
-export interface SingleSectionPageProps extends iCemesterProps {
+import { keyBy } from '../../Cemester';
+export interface SingleSectionPageProps extends iPageProps {
     className?: string;
 }
 
