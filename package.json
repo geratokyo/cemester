@@ -28,6 +28,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-custom-scrollbars": "^4.2.1",
+    "react-scrollable-anchor": "^0.6.1",
     "rebound": "^0.1.0"
   },
   "devDependencies": {

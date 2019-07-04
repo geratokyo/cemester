@@ -4,7 +4,6 @@ import Scrollbars from 'react-custom-scrollbars';
 import { iCmsItem, iPageProps, Dictionary } from '../../models';
 import { Section } from '../Section/Section';
 
-
 export interface SinglePageProps extends iPageProps {
     className?: string;
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { iCmsItem, iCmsProps, DEFAULTS } from '../../models';
 import { Content } from '../../Content';
+import  ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor"; 
 
 
 export interface SectionProps extends iCmsProps {
@@ -31,6 +32,7 @@ export class Section extends React.Component<SectionProps, SectionState>{
     }
 
     componentDidMount(){
+        configureAnchors({})
         this.setState({
             isInView: this.isInView()
         })
@@ -75,8 +77,11 @@ export class Section extends React.Component<SectionProps, SectionState>{
     render() {
         let { props, state } = this;
         let itemClass = props.item.className || "";
+        console.log("hehehe", ScrollableAnchor);
         return (
+            
             <section ref={e => this.el = e} className={`${itemClass}`}>
+                <ScrollableAnchor key={props.item.key} id={props.item.key}>
                 {
                     this.shouldShowChildren() &&
                     props.item.children.map((e) => <Content
@@ -85,6 +90,7 @@ export class Section extends React.Component<SectionProps, SectionState>{
                         cmsOptions={{ ...props, isInView: state.isAnimated || state.isInView }}
                         item={e} />)
                 }
+                </ScrollableAnchor>
             </section>
         )
     }
