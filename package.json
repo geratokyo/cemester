@@ -29,7 +29,6 @@
     "lodash.keyby": "^4.6.0",
     "react": "^16.8.6",
     "react-custom-scrollbars": "^4.2.1",
-    "react-studio-tabs": "0.0.8",
     "rebound": "^0.1.0"
   },
   "devDependencies": {
