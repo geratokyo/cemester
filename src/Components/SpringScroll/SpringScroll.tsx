@@ -12,8 +12,9 @@ export interface SpringScrollState{
 }
 
 export class SpringScroll extends React.Component<SpringScrollProps, SpringScrollState>{
-    springSystem
-    spring
+    springSystem;
+    spring;
+    scrollbars:Scrollbars;
     constructor(props, ...rest) {
         super(props, ...rest);
         this.handleSpringUpdate = this.handleSpringUpdate.bind(this);
@@ -32,20 +33,21 @@ export class SpringScroll extends React.Component<SpringScrollProps, SpringScrol
         this.spring.destroy();
         this.spring = undefined;
     }
+    
 
     getScrollTop() {
-        return (this.refs.scrollbars as Scrollbars).getScrollTop();
+        return this.scrollbars.getScrollTop();
     }
 
     getScrollHeight() {
-        return (this.refs.scrollbars as Scrollbars).getScrollHeight();
+        return this.scrollbars.getScrollHeight();
     }
 
 
     scrollTop(top) {
         const { scrollbars } = this.refs;
         top -= 70;
-        const scrollTop = (scrollbars as Scrollbars).getScrollTop();
+        const scrollTop = this.scrollbars.getScrollTop();
         this.spring.setCurrentValue(scrollTop).setAtRest();
         this.spring.setEndValue(top);
     }
@@ -53,14 +55,14 @@ export class SpringScroll extends React.Component<SpringScrollProps, SpringScrol
     handleSpringUpdate(spring) {
         const { scrollbars } = this.refs;
         const val = spring.getCurrentValue();
-        (scrollbars as Scrollbars).scrollTop(val);
+        this.scrollbars.scrollTop(val);
     }
 
     render() {
         return (
             <Scrollbars
                 {...this.props}
-                ref="scrollbars"/>
+                ref={e => this.scrollbars = e}/>
         );
     }
 }

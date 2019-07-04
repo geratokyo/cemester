@@ -51,25 +51,26 @@ var SpringScroll = (function (_super) {
         this.spring = undefined;
     };
     SpringScroll.prototype.getScrollTop = function () {
-        return this.refs.scrollbars.getScrollTop();
+        return this.scrollbars.getScrollTop();
     };
     SpringScroll.prototype.getScrollHeight = function () {
-        return this.refs.scrollbars.getScrollHeight();
+        return this.scrollbars.getScrollHeight();
     };
     SpringScroll.prototype.scrollTop = function (top) {
         var scrollbars = this.refs.scrollbars;
         top -= 70;
-        var scrollTop = scrollbars.getScrollTop();
+        var scrollTop = this.scrollbars.getScrollTop();
         this.spring.setCurrentValue(scrollTop).setAtRest();
         this.spring.setEndValue(top);
     };
     SpringScroll.prototype.handleSpringUpdate = function (spring) {
         var scrollbars = this.refs.scrollbars;
         var val = spring.getCurrentValue();
-        scrollbars.scrollTop(val);
+        this.scrollbars.scrollTop(val);
     };
     SpringScroll.prototype.render = function () {
-        return (React.createElement(react_custom_scrollbars_1.default, __assign({}, this.props, { ref: "scrollbars" })));
+        var _this = this;
+        return (React.createElement(react_custom_scrollbars_1.default, __assign({}, this.props, { ref: function (e) { return _this.scrollbars = e; } })));
     };
     return SpringScroll;
 }(React.Component));

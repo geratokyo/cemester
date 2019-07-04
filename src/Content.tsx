@@ -16,10 +16,15 @@ export interface ContentState {
 
 export const Content: React.SFC<ContentProps> = (props) => {
     let { item } = props;
-    const C = Components[item.type] || CustomComponentService.getCustomComponent(item);
-    if(!C){
-        console.error(`Component with name "${item.type}" was not found \n Check your type names`)
+    const C = Components[item.type];
+    const K =  CustomComponentService.getCustomComponent(item); 
+    if(!C && !K){
+        console.error(`Component with name "${item.type}" was not found, check your type names in the customComponents prop function`)
         return null;
     }
-    return <C {...props}/> 
+    return <> 
+    {
+        C ? <C {...props}/> : K
+    }
+    </>
 }

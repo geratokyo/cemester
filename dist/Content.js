@@ -16,11 +16,12 @@ var Components = require("./Components");
 var CustomComponentService_1 = require("./CustomComponentService");
 exports.Content = function (props) {
     var item = props.item;
-    var C = Components[item.type] || CustomComponentService_1.default.getCustomComponent(item);
-    if (!C) {
-        console.error("Component with name \"" + item.type + "\" was not found \n Check your type names");
+    var C = Components[item.type];
+    var K = CustomComponentService_1.default.getCustomComponent(item);
+    if (!C && !K) {
+        console.error("Component with name \"" + item.type + "\" was not found, check your type names in the customComponents prop function");
         return null;
     }
-    return React.createElement(C, __assign({}, props));
+    return React.createElement(React.Fragment, null, C ? React.createElement(C, __assign({}, props)) : K);
 };
 //# sourceMappingURL=Content.js.map
