@@ -17,7 +17,7 @@ npm i cemester --save
 ```
 
 ## Interfaces
-### iCemester
+### iPageProps
 |Name|Type|Description|
 |-----|------|---|
 |className|```?string```|Classname of the parent element|
@@ -71,43 +71,3 @@ The interface that the JSON with the tree structure should follow
 |-----|------|---|
 |isInView|```?boolean``` |True if the element is in the viewport of the browser|
 
-
-### iPageProps
-```
-
-export interface iPageProps{
-    /**
-     * Classname of the parent element
-     */
-    className?:string; 
-
-    /**
-     * This is the component that will appear at the top before the content
-     * Also used for a SinglePage type to control the fixed elements
-     */
-    header?: React.ReactNode; 
-
-    /**
-     * This is a tree structure of the content of the page
-     */
-    content: iCmsItem[];
-
-    /**
-     * This represents the current url
-     */
-    url: string | (()=>string); 
-
-    /**
-     * A callback function that should be passed to determine 
-     * the custom components of the campaign
-     */
-    customComponents:(item:iCmsItem)=>React.ReactNode; 
-
-    /**
-     * This is the percentage after which a section is 
-     * going to be considered in view
-     */
-    screenThreshold?:number; 
-
-}
-```
