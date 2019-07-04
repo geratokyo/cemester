@@ -1,10 +1,10 @@
 import * as React from 'react'; 
-import { iCmsItem, DEFAULTS, iCemesterProps } from './models';
+import { iCmsItem, DEFAULTS, iPageProps } from './models';
 import * as Components from './Components';
 import CustomComponentService from './CustomComponentService';
 
 
-export interface CemesterProps extends iCemesterProps{ 
+export interface CemesterProps extends iPageProps{ 
 }
 
 
@@ -32,3 +32,13 @@ export class Cemester extends React.Component<CemesterProps, CemesterState>{
     }
 }
 
+
+
+
+export const keyBy = (e:any[], k:string)=>{
+    let s = {}
+    e.forEach((i)=>{
+        s[i[k]]=i;
+    })
+    return s; 
+}
