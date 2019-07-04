@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/geratokyo/cemester#readme",
   "dependencies": {
-    "lodash.keyby": "^4.6.0",
     "react": "^16.8.6",
     "react-custom-scrollbars": "^4.2.1",
     "rebound": "^0.1.0"
