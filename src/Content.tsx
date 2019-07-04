@@ -17,5 +17,9 @@ export interface ContentState {
 export const Content: React.SFC<ContentProps> = (props) => {
     let { item } = props;
     const C = Components[item.type] || CustomComponentService.getCustomComponent(item);
-    return C ? <C {...props}/> :<pre>{JSON.stringify(item)}</pre>
+    if(!C){
+        console.error(`Component with name "${item.type}" was not found \n Check your type names`)
+        return null;
+    }
+    return <C {...props}/> 
 }
