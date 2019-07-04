@@ -18,7 +18,6 @@ export class SinglePage extends React.Component<SinglePageProps, SinglePageState
     topEl: HTMLElement;
     el: HTMLDivElement;
     elements: Dictionary<Section> = {};
-    sectionOffset;
     scrollEl: Scrollbars;
     windowHeight: number;
     constructor(p: SinglePageProps) {
