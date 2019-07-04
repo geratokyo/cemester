@@ -45,7 +45,7 @@ export interface iCmsItem{
     /**
      * the content of the current node to be rendered in a component
      */
-    content?:any|iImage|iCustomContent; 
+    content?:any|iImage; 
     
     /**
      * the className that should be given to the current node's HTML tag
@@ -76,18 +76,6 @@ export interface iImage{
     imgSrc:string; 
 }
 
-export interface iCustomContent{
-    /**
-     * type of the custom component to be rendered
-     */
-    type:string; 
-
-    /**
-     * this is the data or the props to be passed to
-     * the custom component
-     */
-    data:any; 
-}
 
 export const DEFAULTS = { 
     SCREEN_THRESHOLD:0.85
