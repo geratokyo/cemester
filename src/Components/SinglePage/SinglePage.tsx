@@ -55,12 +55,6 @@ export class SinglePage extends React.Component<SinglePageProps, SinglePageState
         };
     }
 
-    handleScroll = (e) => {
-        // this.checkTopNavBar()
-        // this.setState({
-        //     offset: e.scrollTop
-        // })
-    }
 
     checkTopNavBar = () => {
         let topElOffset = Math.abs(this.topEl.getBoundingClientRect().top);
