@@ -1,5 +1,6 @@
 import * as React from 'react'; 
 import { iCmsItem, iImage, iCmsProps } from '../../models';
+import ScrollAnimationHocHOC from '../../ScrollAnimationHOC';
 
 
 export interface ImageProps extends iCmsProps{
@@ -14,8 +15,11 @@ export const Image: React.SFC<ImageProps> = (props)=>{
     let content:iImage = item.content; 
     let cls = props.className || "";
 
-    let animate = (props.cmsOptions.isInView && item.animation) ? item.animation :(!item.animation)?"":"opacify"
     return (
-        <img className={`${cls} ${item.className} ${animate}`} src={`${resUrl}${content.imgSrc}`} alt={content.altText || ""}/>
+        <img className={`${cls} ${item.attributes && item.attributes.className}`} src={`${resUrl}${content.imgSrc}`} alt={content.altText || ""}/>
     )
 }
+
+
+
+export default ScrollAnimationHocHOC(Image);

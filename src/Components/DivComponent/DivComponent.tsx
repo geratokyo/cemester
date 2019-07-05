@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { iCmsItem, iCmsProps } from '../../models';
 import { Content } from '../../Content';
+import ScrollAnimationHocHOC from '../../ScrollAnimationHOC';
 
 
 export interface DivComponentProps extends iCmsProps{
@@ -13,7 +14,7 @@ export const DivComponent: React.SFC<DivComponentProps> = (props) => {
     let { item } = props;
     let cls = props.className || "";
     return (
-        <div id={item.key} className={`component--${item.key} ${item.className} ${cls}`}>
+        <div id={item.key} className={`component--${item.key} ${item.attributes && item.attributes.className} ${cls}`}>
             {
                 (props.item.children && props.item.children.length) &&
                 props.item.children.map((e) => <Content 
@@ -25,3 +26,7 @@ export const DivComponent: React.SFC<DivComponentProps> = (props) => {
         </div>
     )
 }
+
+
+
+export default ScrollAnimationHocHOC(DivComponent);

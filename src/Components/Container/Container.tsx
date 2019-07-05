@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { iCmsItem, iCmsProps } from '../../models';
 import { Content } from '../../Content';
+import ScrollAnimationHocHOC from '../../ScrollAnimationHOC';
 
 
 export interface ContainerProps extends iCmsProps{
@@ -10,15 +11,15 @@ export interface ContainerProps extends iCmsProps{
 
 
 export const Container: React.SFC<ContainerProps> = (props) => {
-
+    let {item} = props;
     let cls = props.className || "";
-    let itemCls = props.item.className || "container";
+    let itemCls = item.attributes && item.attributes.className || "container";
     return (
         <div className={`${itemCls} ${cls}`}>
             <div className="row">
                 {
-                    (props.item.children && props.item.children.length) &&
-                    props.item.children.map((e) => <Content 
+                    (item.children && item.children.length) &&
+                    item.children.map((e) => <Content 
                         key={e.key} 
                         cmsOptions={props.cmsOptions}
                         item={e} />)
@@ -27,3 +28,5 @@ export const Container: React.SFC<ContainerProps> = (props) => {
         </div>
     )
 }
+
+export default ScrollAnimationHocHOC(Container);
