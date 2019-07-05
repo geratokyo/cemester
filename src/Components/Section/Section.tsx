@@ -47,7 +47,10 @@ export class Section extends React.Component<SectionProps, SectionState>{
         let itemClass = item.attributes && item.attributes.className || "";
 
         return (
-            <section ref={e => this.el = e} className={`${itemClass}`}>
+            <section ref={e => this.el = e} 
+                className={`${itemClass}`}
+                id={item.key}
+            >
                 {
                     this.shouldShowChildren() &&
                     item.children.map((e) => <Content

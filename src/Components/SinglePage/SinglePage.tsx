@@ -83,7 +83,6 @@ export class SinglePage extends React.Component<SinglePageProps, SinglePageState
                             React.Children.map(this.props.header, (child: React.ReactElement<any>) => {
                                 return React.cloneElement(child, {
                                     ...child.props,
-                                    scrollTo: this.scrollToSection
                                 })
                             })[0]
                         }
@@ -96,7 +95,6 @@ export class SinglePage extends React.Component<SinglePageProps, SinglePageState
                             React.Children.map(this.props.header, (child: React.ReactElement<any>) => {
                                 return React.cloneElement(child, {
                                     ...child.props,
-                                    scrollTo: this.scrollToSection
                                 })
                             })[0]
                         }

@@ -1,5 +1,5 @@
 import * as React from 'react'; 
-import { iCmsItem, DEFAULTS, iPageProps } from './models';
+import { DEFAULTS, iPageProps } from './models';
 import * as Components from './Components';
 import CustomComponentService from './CustomComponentService';
 import { SinglePage } from './Components/SinglePage/SinglePage';
