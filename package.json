@@ -28,8 +28,7 @@
   "dependencies": {
     "lodash.throttle": "^4.1.1",
     "react": "^16.8.6",
-    "react-scrollable-anchor": "^0.6.1",
-    "rebound": "^0.1.0"
+    "react-scrollable-anchor": "^0.6.1"
   },
   "devDependencies": {
     "@types/lodash.throttle": "^4.1.6",

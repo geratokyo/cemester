@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { SpringScroll } from '../SpringScroll/SpringScroll';
 import Scrollbars from 'react-custom-scrollbars';
 import { iCmsItem, iPageProps, Dictionary } from '../../models';
 import Section, {Section as ClassSection} from '../Section/Section';
