@@ -12,6 +12,7 @@
         "declaration": true,
         "sourceMap": true,
         "removeComments": true,
+        "esModuleInterop":true
     },
     "exclude": [
         "node_modules",
