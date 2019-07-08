@@ -7,20 +7,6 @@ import AnchorLink from './AnchorLink';
 class App extends React.Component<any, any>{
     cemesterEl:any;
 
-    getScrollPercent = ()=> {
-        var h:any = document.documentElement, 
-            b:any = document.body,
-            st:string = 'scrollTop',
-            sh:string = 'scrollHeight';
-        return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
-    }
-    componentDidMount(){
-        let k:HTMLDivElement = this.cemesterEl;
-        console.log(k)
-        window.addEventListener("scroll", ()=>{
-            console.log(this.getScrollPercent())
-        })
-    }
 
     render() {
         return (
@@ -100,7 +86,7 @@ const CONTENT = [{
                             "animateIn": "zoomIn",
                             "offset": 0
                         },
-                        "content": "<h1>Guidelines</h1>",
+                        "content": "<h1>First</h1>",
                         "key": "t-title",
                         "parent": "t-col",
                         "type": "Text"
@@ -232,7 +218,7 @@ const CONTENT = [{
                         "attributes": {
                             "className": "generic__copy"
                         },
-                        "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>",
+                        "content": "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>",
                         "key": "t-copy-3",
                         "parent": "t-col-2",
                         "type": "Text"
@@ -289,7 +275,7 @@ const CONTENT = [{
                         "attributes": {
                             "className": "generic__copy"
                         },
-                        "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>",
+                        "content": "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam</p>",
                         "key": "t-copy-4",
                         "parent": "t-col-3",
                         "type": "Text"
@@ -307,7 +293,7 @@ const CONTENT = [{
                         "attributes": {
                             "className": "generic__copy"
                         },
-                        "content": "<p>Lorem ipsum dolor sit amet </p>",
+                        "content": "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>",
                         "key": "t-copy-5",
                         "parent": "t-col-3",
                         "type": "Text"
@@ -355,7 +341,7 @@ const CONTENT = [{
                         "attributes": {
                             "className": "generic__copy"
                         },
-                        "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>",
+                        "content": "<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. </p>\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>\n<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally </p>",
                         "key": "t-copy-7",
                         "parent": "t-col-4",
                         "type": "Text"
@@ -403,7 +389,7 @@ const CONTENT = [{
                         "attributes": {
                             "className": "generic__copy"
                         },
-                        "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>",
+                        "content": "<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise.</p>",
                         "key": "t-copy-6",
                         "parent": "t-col-5",
                         "type": "Text"
@@ -444,7 +430,7 @@ const CONTENT = [{
                     "attributes": {
                         "className": "generic__title"
                     },
-                    "content": "<h1>Karte</h1>",
+                    "content": "<h1>Second</h1>",
                     "key": "k-title",
                     "parent": "k-col",
                     "type": "Text"
@@ -453,7 +439,7 @@ const CONTENT = [{
                     "attributes": {
                         "className": "generic__copy"
                     },
-                    "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>",
+                    "content": "<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </p>",
                     "key": "k-text",
                     "parent": "k-col",
                     "type": "Text"
@@ -462,7 +448,7 @@ const CONTENT = [{
                     "attributes": {
                         "className": "generic__copy"
                     },
-                    "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>",
+                    "content": "<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise.</p>",
                     "key": "k-text-1",
                     "parent": "k-col",
                     "type": "Text"
@@ -471,7 +457,7 @@ const CONTENT = [{
                     "attributes": {
                         "className": "generic__copy"
                     },
-                    "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>",
+                    "content": "<p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>",
                     "key": "k-text-2",
                     "parent": "k-col",
                     "type": "Text"
@@ -507,7 +493,7 @@ const CONTENT = [{
                     "attributes": {
                         "className": "generic__title"
                     },
-                    "content": "<h1>Lichtverschmutzung</h1>",
+                    "content": "<h1>Third</h1>",
                     "key": "l-title",
                     "parent": "l-col",
                     "type": "Text"
@@ -516,7 +502,7 @@ const CONTENT = [{
                     "attributes": {
                         "className": "generic__copy"
                     },
-                    "content": "<p>Unsere Nächte werden immer heller, sodass es in den meisten Städten Deutschlands mittlerweile unmöglich ist, nachts noch Sterne zu beobachten. \r\n\r\nSchuld daran ist die sogenannte Lichtverschmutzung, die vom Menschen verursachte Erhellung des Himmels durch künstliches Licht. Weltweit steigt die Lichtverschmutzung pro Jahr um 2-3%, in Europa sogar um ca. 6%. \r\n\r\nDie Ursache ist die übermäßige Beleuchtung, sei es durch Straßenbeleuchtung, Werbeplakate oder der Beleuchtung von Gebäuden. So entstehen Lichtglocken, deren Ausbreitung auf Grund des Streueffektes des Lichtes bis zu 100 Kilometer weit reichen können, über den Städten. \r\n\r\nEine klare Gesetzgebung zur Verringerung der Lichtverschmutzung, welche alle oben genannten Beleuchtungsarten reguliert, gibt es in Deutschland nicht. Vor allem durch die Behauptung der LED-Technik in den vergangenen Jahren ist das Problem noch weiter zugenommen. LED-Lampen gelten zwar als energieeffizient, leuchten aber viel heller als eine herkömmliche Glühbirne und das für weniger Geld. Deswegen wird oft ein viel helleres Licht installiert, als eigentlich notwendig wäre. \r\n\r\nDie Lichtverschmutzung hat nicht nur Folgen auf die Möglichkeit, Sterne mit dem bloßen Auge zu beobachten. Die potentiellen Folgen für unsere Gesundheit sowie die Auswirkung auf unsere Umwelt und Tierwelt sind verheerend. \r\n</p>",
+                    "content": "<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>",
                     "key": "l-text",
                     "parent": "l-col",
                     "type": "Text"
@@ -541,7 +527,7 @@ const CONTENT = [{
                 },
                 {
                     "children": [{
-                        "content": "Obwohl künstliches Licht viele Vorteile mit sich bringt, hat es auch einen deutlichen Nachteil: Immer seltener befinden wir uns in vollständiger Dunkelheit. Und das bringt das Gleichgewicht zwischen Helligkeit und Dunkelheit, das seit 3 Milliarden Jahren das Leben auf unserem Planeten bestimmt, durcheinander. \r\n\r\nWenn man die Zeitspanne, während der wir natürlichem und künstlichem Licht ausgesetzt sind, zusammenrechnet, wird deutlich, dass der Anteil, in dem wir uns in völliger Dunkelheit befinden, immer geringer wird. Dies kann unter anderem dazu führen, dass unsere innere Uhr, die unseren Wach- und Schlafrhythmus regelt, gestört wird.\r\n\r\nZusätzlich kann der hohe Blaulichtanteil von Kunstlicht (Smartphones, Laptops, usw.) die Ausschüttung von dem Hormon Melatonin, das für die Steuerung des Wach- und Schlafrhythmusses zuständig ist, hemmen und so störend auf den Schlaf wirken. Dies wirkt sich wiederum negativ auf die Reparaturmechanismen aus, die der Körper nachts durchführt und kann langfristig ernsthafte gesundheitliche Folgen haben. \r\n",
+                        "content": "These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains",
                         "key": "l-accordion-1-1",
                         "parent": "l-accordion-1",
                         "type": "Text"
@@ -553,7 +539,7 @@ const CONTENT = [{
                 },
                 {
                     "children": [{
-                        "content": "Lichtverschmutzung hat auch direkte Auswirkungen auf die Biodiversität, denn künstliche Beleuchtung in der Nacht wirkt vor allem für viele Tierarten störend. \r\n\r\nEin Beispiel sind Insekten: Sie machen die Hälfte aller Tierarten aus und nehmen innerhalb unsere Ökosystems viele wichtige Aufgaben wahr. Nichtsdestotrotz bewirkt das künstliche Licht, dass unzählige Insektenarten massenhaft aussterben, weil sie beispielsweise die ganze Nacht um eine Straßenlaterne schwirren und dann vor Erschöpfung sterben. \r\n\r\nDoch auch andere Tierarten, wie Wirbel- und Säugetiere sowie Mikroorganismen sind von den Auswirkungen der Lichtverschmutzung betroffen. Fledermäuse, die häufig ihre Nester in alten Kirchtürmen bauen, realisieren bei einer 24-Stunden-Beleuchtung nicht mehr, dass es irgendwann Nacht ist, um auf die Jagd ihrer Beute zu gehen. Als Konsequenz verenden sie in ihren Unterschlüpfen.\r\n",
+                        "content": "These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains",
                         "key": "l-accordion-2-1",
                         "parent": "l-accordion-2",
                         "type": "Text"
@@ -565,12 +551,12 @@ const CONTENT = [{
                 },
                 {
                     "children": [{
-                        "content": "Eine Verringerung der Lichtverschmutzung wäre einfach zu verwirklichen, wenn jeder bewusster und verantwortungsvoller mit der Nutzung von Licht umgehen würde. Wir haben einige einfache Schritte aufgelistet, die auch Sie in Ihrem Alltag umsetzen können, um weniger Licht zu erzeugen:\r\n\r\n•\tAußenlicht nur nach unten strahlen lassen: Durch ein geeignetes Gehäuse kann man das Licht an die zu beleuchtende Stelle scheinen lassen. Die Beleuchtung zur Seite oder nach oben, beispielsweise das Beleuchten von Außenwänden oder Bäumen, sollte vermieden werden. \r\n•\tGlühbirnen mit gelblichem bis warmweißem Licht vorziehen: Das Lichtspektrum dieser Glühbirnen (2200 bis 2700 Kelvin – maximal 3000 Kelvin) weist viele Vorteile auf: Es verfügt über einen weniger störenden Streueffekt, hemmt die Melatonin-Produktion am geringsten und ist außerdem schonend für Insekten.\r\n•\tBlaulichtfilter einschalten: Vor allem bei der Nutzung von Laptops und Smartphones zu später Stunde ist es wichtig, den Blaulichtanteil zu minimieren.\r\n•\tAuf unnötige Beleuchtungen aufmerksam machen: Sprechen Sie Ihre Nachbarn oder die Gemeinde an, falls Ihnen in Ihrer Umgebung überflüssige Beleuchtung auffällt.\r\n\r\nWeitere Informationen finden sie auf https://www.abenteuer-sterne.de/lichtverschmutzung/. \r\n",
+                        "content": "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
                         "key": "l-accordion-3-1",
                         "parent": "l-accordion-3",
                         "type": "Text"
                     }],
-                    "content": "Was können wir tun, um die Lichtverschmutzung zu minimieren?",
+                    "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32.",
                     "key": "l-accordion-3",
                     "parent": "l-col",
                     "type": "Text"
