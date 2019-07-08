@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.App_progress{
+  position:fixed; 
+  top:0px; 
+  left:0px; 
+  width:100%;
+  height:4px;
+}
+
+
+.progress-bar{
+  color:tomato;
+  display: block;
+}
+
+.progress-bar::-moz-progress-bar { background: tomato; }
+.progress-bar::-webkit-progress-value { background: tomato; }
+.progress-bar[value]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  height: 4px;
+  width: 100%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
