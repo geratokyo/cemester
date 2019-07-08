@@ -50,7 +50,7 @@ export default class ScrollAnimation extends React.Component<ScrollAnimationProp
     }
 
     public static defaultProps: Partial<ScrollAnimationProps> = {
-        offset: 0,
+        offset: 150,
         duration: 1,
         initiallyVisible: false,
         delay: 0,
