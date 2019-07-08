@@ -5,10 +5,10 @@ Cemester is a library that let's you create website content and manage it by con
 - [Installation](#installation) 
 - [Interfaces](#interfaces)
 - How to use Cemester
-    - Cemester Syntax
-    - SinglePage and SingleSectionPage
-    - JSON example
-    - use cases
+    - [Data Structure](#DataStructure)
+    - [JSON example](#JSONexample)
+- [Examples](#examples)
+- Contributing
 
 ## Installation
 To install Cemester to your project run: 
@@ -70,3 +70,77 @@ The interface that the JSON with the tree structure should follow
 |-----|------|---|
 |isInView|```?boolean``` |True if the element is in the viewport of the browser|
 
+### iCmsAttributes
+extends [iScrollAnimation](#iScrollAnimation)
+
+|Name|Type|Description|
+|-----|------|---|
+|className|```?string``` |the className that should be given to the current node's HTML tag|
+
+### iScrollAnimation
+
+
+----
+## How to use Cemester
+
+### Data Structure
+
+Cemester will convert a json file into HTML Dom elements. By recursively going through a nested tree structure Cemester will lay down the appropriate components. All the tree data structure should start with one of the following types. 
+
+- __SinglePage__ : If the parent JSON object type is set to SinglePage then all the sections will be rendered in one view
+- __SingleSectionPage__ : If the parent JSON object type is set to SingleSectionPage then only one section will be rendered on the view based on the url key. 
+
+These two components can only have type:"Section" as their children. Theses section are basically what split your content sections. Sections should be able to stand on their own.  
+
+```
+            SinglePage
+            /         \
+        Section(1)    Section(2)
+        /      \        /       \
+     el(1)    el(2)   el(3)     el(4)
+       ⋮        ⋮       ⋮          ⋮
+
+
+        SingleSectionPage
+            /         \
+        Section(1)    Section(2)
+        /      \        /       \
+     el(1)    el(2)   el(3)     el(4)
+       ⋮        ⋮       ⋮          ⋮
+```
+
+Your JSON should implement the [iCmsItem](#iCmsItem) interface. Below is an example of a SingleSection JSON with one section
+
+
+### JSON example
+```JSON
+[{
+    "key":"page", 
+    "content":"", 
+    "parent":"", 
+    "type":"SinglePage", 
+    "attributes":{
+        "className":""
+    }, 
+    "children":[
+        {
+            "key":"section1", 
+            "content":"", 
+            "parent":"", 
+            "type":"Section", 
+            "attributes":{
+                "className":"section-1"
+            }
+        }
+    ]
+}]
+```
+
+
+### Examples
+
+You can find some examples and use cases in the following repositories
+- [Animation Example](https://github.com/geratokyo/cemester/tree/master/examples/animation)
+- [Fixed header Example](https://github.com/geratokyo/cemester/tree/master/examples/fixed-header)
+- [Progress Bar Example](https://github.com/geratokyo/cemester/tree/master/examples/progress-bar)
+- [Simple App Example](https://github.com/geratokyo/cemester/tree/master/examples/simple-app)
