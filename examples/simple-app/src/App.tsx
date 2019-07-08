@@ -5,7 +5,7 @@ import { SplashSlider } from './SplashSlider';
 import AnchorLink from './AnchorLink';
 
 class App extends React.Component<any, any>{
-    cemesterEl:any;
+    cemesterEl: any;
 
 
     render() {
@@ -13,20 +13,19 @@ class App extends React.Component<any, any>{
             <div className="App"
                 ref={e => this.cemesterEl = e}
             >
+
+                <header>
+                    <ul>
+                        <li>
+                            <AnchorLink href="#tipps">test</AnchorLink>
+                        </li>
+                        <li>
+                            <AnchorLink href="#karte">karte</AnchorLink>
+                        </li>
+                    </ul>
+                </header>
                 <Cemester
                     content={CONTENT}
-                    header={
-                        <header>
-                            <ul>
-                                <li>
-                                    <AnchorLink href="#tipps">test</AnchorLink>
-                                </li>
-                                <li>
-                                    <AnchorLink href="#karte">karte</AnchorLink>
-                                </li>
-                            </ul>
-                        </header>
-                    }
                     customComponents={(e) => {
                         switch (e.type) {
                             case "Hr":
