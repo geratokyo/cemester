@@ -17,10 +17,13 @@ class App extends React.Component<any, any>{
                 <header>
                     <ul>
                         <li>
-                            <AnchorLink href="#tipps">test</AnchorLink>
+                            <AnchorLink href="#first">First</AnchorLink>
                         </li>
                         <li>
-                            <AnchorLink href="#karte">karte</AnchorLink>
+                            <AnchorLink href="#second">Second</AnchorLink>
+                        </li>
+                        <li>
+                            <AnchorLink href="#third">Third</AnchorLink>
                         </li>
                     </ul>
                 </header>
