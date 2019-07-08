@@ -30,6 +30,7 @@ npm i cemester --save
 
 ### iCmsItem
 The interface that the JSON with the tree structure should follow
+
 |Name|Type|Description|
 |-----|------|---|
 |key|```string```|distict element identifier|
@@ -59,6 +60,7 @@ The interface that the JSON with the tree structure should follow
 
 
 ### iCmsProps
+
 |Name|Type|Description|
 |-----|------|---|
 |cmsOptions|```?iCmsComponentOptions```|This is the base props interface for all the props of the other elements to extend|
