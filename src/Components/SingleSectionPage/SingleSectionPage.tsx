@@ -38,12 +38,6 @@ export class SingleSectionPage extends React.Component<SingleSectionPageProps, S
         let { props, state } = this;
         let section = state.content[state.url]
         return <div className="ssp">
-            {
-                props.header &&
-                <div className="ssp__header">
-                    {props.header}
-                </div>
-            }
             <div className="ssp__content">
                 <Section
                     ref={ee => { this.sectionEl = ee }}

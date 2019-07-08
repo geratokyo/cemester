@@ -166,12 +166,6 @@ export interface iPageProps{
     className?:string; 
 
     /**
-     * This is the component that will appear at the top before the content
-     * Also used for a SinglePage type to control the fixed elements
-     */
-    header?: React.ReactNode; 
-
-    /**
      * This is a tree structure of the content of the page
      */
     content: iCmsItem[];
