@@ -46,17 +46,7 @@ export interface iCmsItem{
      * the content of the current node to be rendered in a component
      */
     content?:any|iImage; 
-    
-    /**
-     * the className that should be given to the current node's HTML tag
-     */
-    // className?:string; 
-
-    /**
-     * the className for the animations to be added on a current HTML tag
-     */
-    // animation?:string; 
-
+  
     /**
      * Child elements of the current node
      */
