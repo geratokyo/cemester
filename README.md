@@ -5,8 +5,8 @@ Cemester is a library that let's you create website content and manage it by con
 - [Installation](#installation) 
 - [Interfaces](#interfaces)
 - How to use Cemester
-    - [Data Structure](#DataStructure)
-    - [JSON example](#JSONexample)
+    - [Data Structure](#data-structure)
+    - [JSON example](#json-example)
 - [Examples](#examples)
 - Contributing
 
@@ -26,7 +26,7 @@ npm i cemester --save
 |customComponents|```(item:iCmsItem)=>React.ReactNode```|A callback function that should be passed to determine the custom components of the campaign|
 |screenThreshold|```?number```|This is the percentage after which a section is going to be considered in view|
 
-----
+
 
 ### iCmsItem
 The interface that the JSON with the tree structure should follow
@@ -40,7 +40,7 @@ The interface that the JSON with the tree structure should follow
 |animation|```?string```|the className for the animations to be added on a current HTML tag| 
 |children|```?iCmsItem[]```|Child elements of the current node|
 
-----
+
 
 ### iImage
 |Name|Type|Description|
@@ -48,7 +48,7 @@ The interface that the JSON with the tree structure should follow
 |altText|```?string```|Image alt text|
 |imgSrc|```string```| Image source url|
 
----
+
 
 ### iCustomContent
 |Name|Type|Description|
@@ -56,14 +56,13 @@ The interface that the JSON with the tree structure should follow
 |type|```string```|type of the custom component to be rendered|
 |data|```any```|this is the data or the props to be passed to the custom component|
 
----
+
 
 ### iCmsProps
 |Name|Type|Description|
 |-----|------|---|
 |cmsOptions|```?iCmsComponentOptions```|This is the base props interface for all the props of the other elements to extend|
 
-----
 
 ### iCmsComponentOptions
 |Name|Type|Description|
@@ -79,6 +78,20 @@ extends [iScrollAnimation](#iScrollAnimation)
 
 ### iScrollAnimation
 
+|Name|Type|Description|
+|-----|-----|---------|
+|offset|```?number```|The "viewport" is by default 150 pixels from the top and bottom of the screen. When part of an element is within the "viewport", animateIn is triggered. When no part of the element is in the "viewport", animateOut is triggered. This size of the "viewport" can be overridden by setting the offset property.|
+|animateIn|```?string```|Any css animation defined against a class, be it from animate.css or an animation that you have created yourself. The Animation triggers when the element enters the "viewport" (see offset property for more details on this).|
+|animateOut|```?string```|Any css animation defined against a class, be it from animate.css or an animation that you have created yourself. The Animation triggers when the element is leaving the "viewport" (see offset property for more details on this).|
+|duration|```?number```|Animation duration in seconds.|
+|initiallyVisible|```?boolean```|Whether the element should be visible to begin with or not.|
+|delay|```?number```|How long to delay the animation for (in milliseconds) once it enters or leaves the view.|
+|animateOnce|```?boolean```|Whether the element should only animate once or not.|
+|style|```? React.CSSProperties```|A style object can be assigned to any ScrollAnimation component and will be passed to the rendered dom element. Its probably best to avoid manually setting animationDuration or opacity as the component will modify those attributes.|
+|scrollableParentSelector|```?string```|By default the code checks to see if the element is visible within the window. This can be changed to any other parent element of the ScrollAnimation by adding a css selector pointing to the parent that you wish to use.|
+|animatePreScroll|```?boolean```|By default if a ScrollAnimation is in view as soon as a page loads, then the animation will begin. If you don't want the animation to being until the user scrolls, then set this to false.|
+|afterAnimatedIn|```?(e:any)=>void```|Callback function to run once the animateIn animation has completed. Receives the visibility of the element at time of execution.|
+|afterAnimatedOut|```?(e:any)=>void```|Callback function to run once the animateOut animation has completed. Receives the visibility of the element at time of execution. |
 
 ----
 ## How to use Cemester
@@ -111,6 +124,7 @@ These two components can only have type:"Section" as their children. Theses sect
 
 Your JSON should implement the [iCmsItem](#iCmsItem) interface. Below is an example of a SingleSection JSON with one section
 
+----
 
 ### JSON example
 ```JSON
@@ -136,7 +150,7 @@ Your JSON should implement the [iCmsItem](#iCmsItem) interface. Below is an exam
 }]
 ```
 
-
+----
 ### Examples
 
 You can find some examples and use cases in the following repositories
