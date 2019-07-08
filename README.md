@@ -21,7 +21,6 @@ npm i cemester --save
 |Name|Type|Description|
 |-----|------|---|
 |className|```?string```|Classname of the parent element|
-|header|```?React.ReactNode```|This is the component that will appear at the top before the content Also used for a SinglePage type to control the fixed elements|
 |content|```iCmsItem[]```|This is a tree structure of the content of the page|
 |url|```string``` , ```(()=>string)```|This represents the current url|
 |customComponents|```(item:iCmsItem)=>React.ReactNode```|A callback function that should be passed to determine the custom components of the campaign|
