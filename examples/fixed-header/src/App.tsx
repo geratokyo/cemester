@@ -12,13 +12,6 @@ class App extends React.Component<any, any>{
             isNavFixed: false
         }
     }
-    getScrollPercent = () => {
-        var h: any = document.documentElement,
-            b: any = document.body,
-            st: string = 'scrollTop',
-            sh: string = 'scrollHeight';
-        return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
-    }
 
     componentDidMount() {
         window.addEventListener("scroll", this.shouldNavBeFixed);
