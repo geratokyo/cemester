@@ -181,7 +181,7 @@ export default class ScrollAnimation extends React.Component<ScrollAnimationProp
             }
             const vis = this.getVisibility();
             if (callback) {
-                callback(vis);
+                callback(this.node);
             }
         });
     }

@@ -122,12 +122,12 @@ export interface iScrollAnimation{
     /**
      * Callback function to run once the animateIn animation has completed. Receives the visibility of the element at time of execution.
      */
-    afterAnimatedIn?:(e:any)=>void;
+    afterAnimatedIn?:(e:HTMLElement)=>void;
 
     /**
      * Callback function to run once the animateOut animation has completed. Receives the visibility of the element at time of execution. 
      */
-    afterAnimatedOut?:(e:any)=>void;
+    afterAnimatedOut?:(e:HTMLElement)=>void;
 }
 
 
