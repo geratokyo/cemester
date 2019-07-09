@@ -8,7 +8,7 @@ Cemester is a library that let's you create website content and manage it by con
     - [Data Structure](#data-structure)
     - [JSON example](#json-example)
 - [Examples](#examples)
-- Contributing
+- [Contributing](#contributing)
 
 ## Installation
 To install Cemester to your project run: 
@@ -124,9 +124,10 @@ These two components can only have type:"Section" as their children. Theses sect
        ⋮        ⋮       ⋮          ⋮
 ```
 
-Your JSON should implement the [iCmsItem](#iCmsItem) interface. Below is an example of a SingleSection JSON with one section
 
 ----
+
+Your JSON should implement the [iCmsItem](#iCmsItem) interface. Below is an example of a SingleSection JSON with one section
 
 ### JSON example
 ```JSON
@@ -160,3 +161,8 @@ You can find some examples and use cases in the following repositories
 - [Fixed header Example](https://github.com/geratokyo/cemester/tree/master/examples/fixed-header)
 - [Progress Bar Example](https://github.com/geratokyo/cemester/tree/master/examples/progress-bar)
 - [Simple App Example](https://github.com/geratokyo/cemester/tree/master/examples/simple-app)
+
+
+----
+
+### Contributing
