@@ -1,6 +1,6 @@
 {
   "name": "cemester",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A content management library that converts a json objects into DOM elements",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
