@@ -19,7 +19,7 @@ export const Content: React.SFC<ContentProps> = (props) => {
     const C = Components[item.type];
     const K =  CustomComponentService.getCustomComponent(item); 
     if(!C && !K){
-        console.error(`Component with name "${item.type}" was not found, check your type names in the customComponents prop function`)
+        console.error(`cemester => Component with name "${item.type}" was not found, check your type names in the customComponents prop function`)
         return null;
     }
     return <> 
