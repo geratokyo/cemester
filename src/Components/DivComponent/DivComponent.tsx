@@ -12,15 +12,16 @@ export interface DivComponentProps extends iCmsProps{
 
 export const DivComponent: React.SFC<DivComponentProps> = (props) => {
     let { item } = props;
-    let cls = props.className || "";
+    let itemCls = props.className ? props.className :((item.attributes && item.attributes.className) ? item.attributes.className:""); 
     return (
-        <div id={item.key} className={`component--${item.key} ${item.attributes && item.attributes.className} ${cls}`}>
+        <div id={item.key} className={`component--${item.key} ${itemCls}`}
+            style={props.style}
+        >
             {
                 (props.item.children && props.item.children.length) &&
                 props.item.children.map((e) => <Content 
                     key={e.key} 
                     item={e} 
-                    cmsOptions={props.cmsOptions}
                 />)
             }
         </div>

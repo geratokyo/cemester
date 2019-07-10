@@ -15,13 +15,14 @@ export const Container: React.SFC<ContainerProps> = (props) => {
     let cls = props.className || "";
     let itemCls = item.attributes && item.attributes.className || "container";
     return (
-        <div className={`${itemCls} ${cls}`}>
+        <div className={`${itemCls} ${cls}`}
+            style={props.style}
+        >
             <div className="row">
                 {
                     (item.children && item.children.length) &&
                     item.children.map((e) => <Content 
                         key={e.key} 
-                        cmsOptions={props.cmsOptions}
                         item={e} />)
                 }
             </div>

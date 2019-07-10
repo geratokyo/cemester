@@ -16,7 +16,9 @@ export const Image: React.SFC<ImageProps> = (props)=>{
     let cls = props.className || "";
 
     return (
-        <img className={`${cls} ${item.attributes && item.attributes.className}`} src={`${resUrl}${content.imgSrc}`} alt={content.altText || ""}/>
+        <img className={`${cls} ${item.attributes && item.attributes.className}`} src={`${resUrl}${content.imgSrc}`} alt={content.altText || ""}
+            style={props.style}
+        />
     )
 }
 

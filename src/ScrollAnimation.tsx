@@ -12,8 +12,8 @@ import * as React from 'react';
 import throttle from "lodash.throttle";
 import { iScrollAnimation } from './models';
 
-export interface ScrollAnimationProps extends iScrollAnimation{
-    className?:string;
+export interface ScrollAnimationProps extends iScrollAnimation {
+    className?: string;
 }
 
 export interface ScrollAnimationState {
@@ -165,7 +165,7 @@ export default class ScrollAnimation extends React.Component<ScrollAnimationProp
                 }
             });
             this.callbackTimeout = setTimeout(callback, this.props.duration * 1000);
-        }, this.props.delay);
+        }, this.props.delay * 1000);
     }
 
     animateIn(callback) {
@@ -233,12 +233,21 @@ export default class ScrollAnimation extends React.Component<ScrollAnimationProp
 
     render() {
         var classes = this.props.className ? `${this.props.className} ${this.state.classes}` : this.state.classes;
+        if(!this.props.children){
+            return null;
+        }
+        let child:any = this.props.children; 
+        this.node = React.cloneElement(child, {
+            ...child.props,
+            className: classes,
+            style: Object.assign({}, this.state.style, this.props.style)
+        })
         return (
-            <div ref={(node) => { this.node = node; }} 
-                className={classes} 
-                style={Object.assign({}, this.state.style, this.props.style)}>
-                {this.props.children}
-            </div>
+            <>
+                {
+                     this.node   
+                }
+            </>
         );
     }
 }

@@ -15,6 +15,7 @@ export const Text: React.SFC<TextProps> = (props)=>{
     let clsA = item.attributes && item.attributes.className || "";
     return (
         <div className={`text ${cls} ${clsA}`}
+            style={props.style}
             dangerouslySetInnerHTML={{__html:item.content}}
         >
         </div>

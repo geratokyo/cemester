@@ -8,9 +8,7 @@ import ScrollAnimationHocHOC from '../../ScrollAnimationHOC';
 
 export interface SectionProps extends iCmsProps {
     className?: string;
-    offset?: number;
     item: iCmsItem;
-    screenThreshold?: number;
 }
 
 export interface SectionState {
@@ -30,7 +28,6 @@ export class Section extends React.Component<SectionProps, SectionState>{
     }
 
     public static defaultProps: Partial<SectionProps> = {
-        screenThreshold: DEFAULTS.SCREEN_THRESHOLD
     }
 
     shouldShowChildren = () => {
@@ -44,19 +41,17 @@ export class Section extends React.Component<SectionProps, SectionState>{
     render() {
         let { props, state } = this;
         let {item} = props; 
-        let itemClass = item.attributes && item.attributes.className || "";
-
+        let itemClass = props.className ? props.className : (item.attributes ? item.attributes.className : "");
         return (
             <section ref={e => this.el = e} 
                 className={`${itemClass}`}
                 id={item.key}
+                style={props.style}
             >
                 {
                     this.shouldShowChildren() &&
                     item.children.map((e) => <Content
                         key={e.key}
-                        offset={props.offset}
-                        cmsOptions={{ ...props, isInView: state.isAnimated || state.isInView }}
                         item={e} />)
                 }
             </section>

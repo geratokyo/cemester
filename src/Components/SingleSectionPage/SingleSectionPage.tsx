@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { iCmsItem, Dictionary, iPageProps } from '../../models';
 import { Section } from '../Section/Section';
-import { GET_URL } from '../SinglePage/SinglePage';
 import { keyBy } from '../../Cemester';
 export interface SingleSectionPageProps extends iPageProps {
     className?: string;
@@ -49,3 +48,12 @@ export class SingleSectionPage extends React.Component<SingleSectionPageProps, S
         </div>
     }
 }
+
+
+export const GET_URL = (url: string | (() => string)) => {
+    if (typeof url === "string") {
+        return url;
+    } else if (typeof url === "function") {
+        return url();
+    }
+} 
