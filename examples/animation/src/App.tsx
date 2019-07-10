@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Cemester, ScrollAnimationHOC } from 'cemester';
+import { Cemester, ScrollAnimationHOC, iCmsItem } from 'cemester';
 import { SplashSlider } from './SplashSlider';
 import AnchorLink from './AnchorLink';
 
@@ -27,7 +27,7 @@ class App extends React.Component<any, any>{
                 </header>
                 <Cemester
                     content={CONTENT}
-                    customComponents={(e) => {
+                    customComponents={(e:iCmsItem) => {
                         switch (e.type) {
                             case "Hr":
                                 return <hr />

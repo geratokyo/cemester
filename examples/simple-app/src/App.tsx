@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { Cemester, ScrollAnimationHOC } from 'cemester';
 import { SplashSlider } from './SplashSlider';
-import AnchorLink from './AnchorLink';
 
 class App extends React.Component<any, any>{
     cemesterEl: any;
@@ -13,28 +12,15 @@ class App extends React.Component<any, any>{
             <div className="App"
                 ref={e => this.cemesterEl = e}
             >
-
-                <header>
-                    <ul>
-                        <li>
-                            <AnchorLink href="#first">First</AnchorLink>
-                        </li>
-                        <li>
-                            <AnchorLink href="#second">Second</AnchorLink>
-                        </li>
-                        <li>
-                            <AnchorLink href="#third">Third</AnchorLink>
-                        </li>
-                    </ul>
-                </header>
                 <Cemester
-                    content={CONTENT}
+                    content={BIG_CONTENT}
                     customComponents={(e) => {
                         switch (e.type) {
                             case "Hr":
                                 return <hr />
                             case "SplashSlider":
                                 let C = ScrollAnimationHOC(SplashSlider);
+
                                 return <C item={e} />
                             default:
                                 break;
@@ -52,6 +38,72 @@ export default App;
 
 
 const CONTENT = [{
+    "children": [{
+        "attributes": {
+            "className": "splash",
+            // "animateIn": "fadeIn", 
+            // "offset":0
+        },
+        "children": [{
+            "content": "Hello World!",
+            "key": "s-slider",
+            "parent": "splash",
+            "type": "SplashSlider",
+            "attributes": {
+                "className": "splash",
+                "animateIn": "fadeIn", 
+                "delay":1, 
+                "duration":10,
+                "offset":0
+            },
+        },{
+            "content": "Hello Earth!",
+            "key": "s-sliders",
+            "parent": "splash",
+            "type": "Text",
+            "attributes": {
+                "className": "splash",
+                "animateIn": "fadeIn", 
+                "delay":4, 
+                "duration":10,
+                "offset":0
+            },
+        }],
+        "content": "",
+        "key": "splash",
+        "parent": "page",
+        "type": "Section"
+    },
+    {
+        "attributes": {
+            "className": "first",
+        },
+        "content": "",
+        "key": "first",
+        "parent": "page",
+        "type": "Section"
+    },
+    {
+        "attributes": {
+            "className": "second",
+        },
+        "content": "",
+        "key": "second",
+        "parent": "page",
+        "type": "Section"
+    }
+
+    ],
+    "content": "",
+    "key": "page",
+    "parent": "",
+    "type": "SinglePage"
+}]
+
+
+
+
+const BIG_CONTENT = [{
     "children": [{
         "attributes": {
             "className": "splash",
@@ -145,6 +197,12 @@ const CONTENT = [{
             "type": "DivComponent"
         },
         {
+            "attributes":{
+                "className":"hahahaha", 
+                "animateIn":"zoomIn", 
+                "duration":10, 
+                "offset":0
+            },
             "children": [{
                 "children": [{
                     "attributes": {
