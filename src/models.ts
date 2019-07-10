@@ -12,14 +12,15 @@ export interface Dictionary<T>{
  * of the other elements to extend
  */
 export interface iCmsProps{
-    cmsOptions?:iCmsComponentOptions;
+
+    style?:React.CSSProperties; 
 }
 
 export interface iCmsComponentOptions{
     /**
      * True if the element is in the viewport of the browser
      */
-    isInView?:boolean; 
+
 }
 
 
