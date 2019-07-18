@@ -17,7 +17,7 @@ export const ScrollAnimationHOC= <P extends Object>(WrappedComponent:React.Compo
                 return <WrappedComponent {...props} />
             }
             return (
-                <ScrollAnimation {...attr}>
+                <ScrollAnimation {...attr} key={"sa-" + (this.props as any).item.key}>
                     <WrappedComponent {...props} />
                 </ScrollAnimation>
             )

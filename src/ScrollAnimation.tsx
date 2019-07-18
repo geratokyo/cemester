@@ -180,7 +180,7 @@ export default class ScrollAnimation extends React.Component<ScrollAnimationProp
                 this.animating = false;
             }
             const vis = this.getVisibility();
-            if (callback) {
+            if (vis.inViewport && callback) {
                 callback(this.node);
             }
         });
@@ -239,9 +239,11 @@ export default class ScrollAnimation extends React.Component<ScrollAnimationProp
         let child:any = this.props.children; 
         this.node = React.cloneElement(child, {
             ...child.props,
+            key:child.props.item.key,
             className: classes,
             style: Object.assign({}, this.state.style, this.props.style)
         })
+
         return (
             <>
                 {
