@@ -7,7 +7,6 @@ import CustomComponentService from './CustomComponentService';
 
 export interface ContentProps extends iCmsProps {
     item: iCmsItem;
-    offset?: number;
 }
 
 export interface ContentState {

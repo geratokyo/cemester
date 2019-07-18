@@ -172,10 +172,4 @@ export interface iPageProps{
      */
     customComponents:(item:iCmsItem)=>React.ReactNode; 
 
-    /**
-     * This is the percentage after which a section is 
-     * going to be considered in view
-     */
-    screenThreshold?:number; 
-
 }

@@ -22,7 +22,6 @@ export class Cemester extends React.Component<CemesterProps, CemesterState>{
     }
 
     public static defaultProps:Partial<CemesterProps> ={ 
-        screenThreshold:DEFAULTS.SCREEN_THRESHOLD
     }
 
     getElement = ()=>{
