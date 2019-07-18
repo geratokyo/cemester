@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Cemester, ScrollAnimationHOC } from 'cemester';
+import { Cemester, ScrollAnimationHOC, Content as CemesterContent } from 'cemester';
 import { SplashSlider } from './SplashSlider';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 class App extends React.Component<any, any>{
     cemesterEl: any;
@@ -12,9 +13,19 @@ class App extends React.Component<any, any>{
             <div className="App"
                 ref={e => this.cemesterEl = e}
             >
+                <div key="first">
+                    <a href="#first">First</a>
+                </div>
+                <div key="second">
+                    <a href="#second">Second</a>
+                </div>
+                <div key="splash">
+                    <a href="#splash">Splash</a>
+                </div>
+
                 <Cemester
-                    content={BIG_CONTENT}
-                    customComponents={(e) => {
+                    content={CONTENT}
+                    customComponents={(e: any) => {
                         switch (e.type) {
                             case "Hr":
                                 return <hr />
@@ -22,6 +33,10 @@ class App extends React.Component<any, any>{
                                 let C = ScrollAnimationHOC(SplashSlider);
 
                                 return <C item={e} />
+                            case "SectionScrollable":
+                                return <ScrollableAnchor id={e.key}>
+                                        <div key={e.key} className={e.attributes.className} >{e.content}</div>
+                                    </ScrollableAnchor>;
                             default:
                                 break;
                         }
@@ -36,61 +51,42 @@ class App extends React.Component<any, any>{
 export default App;
 
 
-
 const CONTENT = [{
     "children": [{
         "attributes": {
             "className": "splash",
-            // "animateIn": "fadeIn", 
-            // "offset":0
         },
-        "children": [{
-            "content": "Hello World!",
-            "key": "s-slider",
-            "parent": "splash",
-            "type": "SplashSlider",
-            "attributes": {
-                "className": "splash",
-                "animateIn": "fadeIn", 
-                "delay":1, 
-                "duration":10,
-                "offset":0
-            },
-        },{
-            "content": "Hello Earth!",
-            "key": "s-sliders",
-            "parent": "splash",
-            "type": "Text",
-            "attributes": {
-                "className": "splash",
-                "animateIn": "fadeIn", 
-                "delay":4, 
-                "duration":10,
-                "offset":0
-            },
-        }],
-        "content": "",
+        "content": "efsfs",
         "key": "splash",
         "parent": "page",
-        "type": "Section"
+        "type": "SectionScrollable"
     },
     {
         "attributes": {
             "className": "first",
         },
-        "content": "",
+        "content": "gege",
         "key": "first",
         "parent": "page",
-        "type": "Section"
+        "type": "SectionScrollable"
     },
     {
         "attributes": {
             "className": "second",
         },
-        "content": "",
+        "content": "wewew",
         "key": "second",
         "parent": "page",
-        "type": "Section"
+        "type": "SectionScrollable"
+    },
+    {
+        "attributes": {
+            "className": "forth",
+        },
+        "content": "efsefs",
+        "key": "forth",
+        "parent": "page",
+        "type": "SectionScrollable"
     }
 
     ],
@@ -197,11 +193,11 @@ const BIG_CONTENT = [{
             "type": "DivComponent"
         },
         {
-            "attributes":{
-                "className":"hahahaha", 
-                "animateIn":"zoomIn", 
-                "duration":10, 
-                "offset":0
+            "attributes": {
+                "className": "hahahaha",
+                "animateIn": "zoomIn",
+                "duration": 10,
+                "offset": 0
             },
             "children": [{
                 "children": [{
